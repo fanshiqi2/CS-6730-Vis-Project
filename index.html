@@ -1,18 +1,168 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Children's Health in the United States</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="hero">
-    <section class="title-box">
-      <h1 class="title">Children's Health in the United States</h1>
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>Children's Health in the United States</h1>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-inner">
+      <a class="toc-link" href="#introduction">Introduction</a>
+      <a class="toc-link" href="#mental-health">Mental Health</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="introduction" class="intro section">
+      <div class="content">
+        <h2>Introduction</h2>
+        <p>
+          Children's mental health is an important part of overall well-being, yet patterns can differ widely across states and over time.
+          This page highlights three interactive views that focus on Maine, comparing trends in diagnosed depression or anxiety,
+          persistent sadness or hopelessness among high school students, and children's insurance coverage as one possible related factor.
+        </p>
+      </div>
+    </section>
+
+    <section id="mental-health" class="mental-health section">
+      <div class="content">
+        <h2>Mental Health</h2>
+
+        <article class="story-block">
+          <h3>Diagnosed Depression or Anxiety in Children (Ages 3–17)</h3>
+
+          <p class="story-text">
+            This view shows that Maine stays at the high end across 2016–2022 for the share of children ages 3–17 diagnosed with
+            depression or anxiety. The pattern reaches its highest point at about 23% in 2021, suggesting that Maine consistently
+            stands out relative to many other states in this period.
+          </p>
+
+          <div class="viz-card">
+            <div class="tableauPlaceholder" id="viz1">
+              <noscript>
+                <a href="#">
+                  <img
+                    alt="Children Diagnosed with Depression or Anxiety by State (Ages 3–17)"
+                    src="https://public.tableau.com/static/images/me/mental_17749285540910/ChildDepressionAnxietyStateTrend/1_rss.png"
+                    style="border: none"
+                  />
+                </a>
+              </noscript>
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="mental_17749285540910/ChildDepressionAnxietyStateTrend" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/ChildDepressionAnxietyStateTrend/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+                <param name="filter" value="publish=yes" />
+              </object>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="story-block">
+          <h3>Persistent Sadness or Hopelessness in High School Students</h3>
+
+          <p class="story-text">
+            In contrast to the first view, Maine remains below the U.S. average across 2009–2023 for persistent sadness or
+            hopelessness among high school students. Maine still rises to around 38%, but that is below the U.S. peak of 42%,
+            showing a different pattern depending on which mental health indicator is examined.
+          </p>
+
+          <div class="viz-card">
+            <div class="tableauPlaceholder" id="viz2">
+              <noscript>
+                <a href="#">
+                  <img
+                    alt="Persistent Sadness or Hopelessness Among High School Students: Maine vs U.S. Average"
+                    src="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_SadorHopelessTrend/1_rss.png"
+                    style="border: none"
+                  />
+                </a>
+              </noscript>
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="mental_17749285540910/MainevsU_S_SadorHopelessTrend" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_SadorHopelessTrend/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+                <param name="filter" value="publish=yes" />
+              </object>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="story-block">
+          <h3>Uninsured Children as One Possible Driver</h3>
+
+          <p class="story-text">
+            This view introduces insurance coverage as one possible factor related to children's health outcomes. Maine stays at
+            or below the U.S. level for uninsured children in most years, which suggests that insurance alone may not fully explain
+            the patterns seen in the earlier mental health charts and that additional factors should be explored.
+          </p>
+
+          <div class="viz-card">
+            <div class="tableauPlaceholder" id="viz3">
+              <noscript>
+                <a href="#">
+                  <img
+                    alt="Uninsured Children (Ages 0–18): Maine vs U.S."
+                    src="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_ChildInsuranceTrend/1_rss.png"
+                    style="border: none"
+                  />
+                </a>
+              </noscript>
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="mental_17749285540910/MainevsU_S_ChildInsuranceTrend" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_ChildInsuranceTrend/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+                <param name="filter" value="publish=yes" />
+              </object>
+            </div>
+          </div>
+
+        </article>
+      </div>
     </section>
   </main>
 
+  <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

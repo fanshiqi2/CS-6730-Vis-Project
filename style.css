@@ -2,52 +2,216 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background: #f6f4f3;
+  color: #222;
+  line-height: 1.6;
 }
 
 .hero {
   min-height: 100vh;
-  background-image: url("images/children-health.webp");
+  background-image:
+    linear-gradient(rgba(20, 20, 20, 0.38), rgba(20, 20, 20, 0.38)),
+    url("images/children-health.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  position: relative;
+  padding: 32px 20px;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.title-box {
-  position: relative;
-  z-index: 1;
+.hero-overlay {
   background: rgba(255, 255, 255, 0.92);
-  padding: 28px 36px;
-  border-radius: 20px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
-  max-width: 900px;
+  padding: 42px 48px;
+  border-radius: 22px;
+  max-width: 980px;
+  width: 100%;
   text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
-.title {
+.hero-overlay h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.hero-overlay p {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  line-height: 1.15;
-  font-weight: 700;
+  font-size: 1.2rem;
+  color: #444;
 }
 
-@media (max-width: 640px) {
-  .title-box {
-    padding: 22px 20px;
+.section {
+  padding: 72px 20px;
+}
+
+.content {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.intro {
+  background: #ffffff;
+}
+
+.intro h2,
+.mental-health h2 {
+  margin: 0 0 18px;
+  font-size: 2.2rem;
+  color: #8a1f49;
+}
+
+.intro p {
+  font-size: 1.12rem;
+  color: #333;
+}
+
+.mental-health {
+  background: #f6f4f3;
+}
+
+.story-block {
+  margin-top: 42px;
+}
+
+.story-block h3 {
+  margin: 0 0 16px;
+  color: #8a1f49;
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.viz-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.tableauPlaceholder {
+  width: 100%;
+  position: relative;
+  min-height: 720px;
+}
+
+.tableauViz {
+  width: 100%;
+  min-height: 720px;
+}
+
+.story-text {
+  margin: 18px 0 0;
+  font-size: 1.08rem;
+  color: #333;
+}
+
+@media (max-width: 1024px) {
+  .tableauPlaceholder {
+    min-height: 650px;
   }
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    padding: 28px 22px;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 56px 16px;
+  }
+
+  .intro h2,
+  .mental-health h2 {
+    font-size: 1.8rem;
+  }
+
+  .story-block h3 {
+    font-size: 1.4rem;
+  }
+
+  .tableauPlaceholder {
+    min-height: 520px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#introduction,
+#mental-health {
+  scroll-margin-top: 90px;
+}
+
+.toc {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e6e1df;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 0 20px;
+}
+
+.toc-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.toc-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #8a1f49;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.toc-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.toc-link:hover {
+  color: #b12b5b;
+  border-bottom-color: #b12b5b;
+}
+
+.toc-link.active {
+  color: #8a1f49;
+  border-bottom-color: #8a1f49;
 }
