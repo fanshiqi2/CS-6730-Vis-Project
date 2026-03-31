@@ -1,1 +1,1 @@
-# CS-6730-Vis-Project
+# CS-6730-Project
