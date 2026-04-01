@@ -400,8 +400,10 @@ body::after {
   font-size: .8rem;
 }
 .footer-divider { margin: 0 8px; }
-.site-footer a { color: rgba(255,255,255,.4); text-decoration: underline; }
-.site-footer a:hover { color: rgba(255,255,255,.7); }
+.site-footer a         { color: #4ecab7; text-decoration: underline; }
+.site-footer a:hover,
+.site-footer a:active  { color: #fe6ec6; }
+.site-footer a:visited { color: #9b5de5; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
