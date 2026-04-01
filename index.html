@@ -3,166 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Children's Health in the United States</title>
+  <title>Mind the Gap — Children's Mental Health Disparities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ===== HERO ===== -->
   <header class="hero">
-    <div class="hero-overlay">
-      <h1>Children's Health in the United States</h1>
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+    <div class="hero-circle c3"></div>
+    <div class="hero-content">
+      <div class="hero-badge">CS 6730 · Data Visualization</div>
+      <h1>Mind the <em>Gap</em></h1>
+      <p class="hero-sub">Exploring racial disparities in children's mental health across the United States</p>
+      <div class="scroll-hint">
+        <span>↓</span>
+        Scroll to explore
+      </div>
     </div>
   </header>
 
-  <nav class="toc">
-    <div class="toc-inner">
-      <a class="toc-link" href="#introduction">Introduction</a>
-      <a class="toc-link" href="#mental-health">Mental Health</a>
+  <!-- ===== TABS ===== -->
+  <nav class="tab-bar" id="tabBar">
+    <div class="tab-inner">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="white">White</button>
+      <button class="tab-btn" data-tab="black">Black</button>
+      <button class="tab-btn" data-tab="hispanic">Hispanic</button>
+      <button class="tab-btn" data-tab="asian">Asian</button>
+      <button class="tab-btn" data-tab="multiracial">Two+ Races</button>
     </div>
   </nav>
 
-  <main>
-    <section id="introduction" class="intro section">
-      <div class="content">
-        <h2>Introduction</h2>
-        <p>
-          Children's mental health is an important part of overall well-being, yet patterns can differ widely across states and over time.
-          This page highlights three interactive views that focus on Maine, comparing trends in diagnosed depression or anxiety,
-          persistent sadness or hopelessness among high school students, and children's insurance coverage as one possible related factor.
+  <!-- ============================================================
+       TAB: OVERVIEW
+       ============================================================ -->
+  <main class="tab-content active" id="tab-overview">
+
+    <!-- Step 1 — Population -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">1</div>
+        <p class="step-question">Who is in the data?</p>
+        <h2>The population is far from equal.</h2>
+        <p class="step-body">
+          Before diving into mental health outcomes, we need to understand
+          <strong>who we're looking at</strong>. White and Two-or-More-Races
+          groups dominate the sample — meaning some groups lack enough data
+          for deep analysis.
         </p>
+        <div class="viz-card">
+          <iframe
+            src="https://public.tableau.com/views/MentalHealth-AverageChildPopulationForDifferentRacesAcrossYear/childpopulationdistribution?:showVizHome=no"
+            allowfullscreen></iframe>
+        </div>
+        <div class="step-takeaway">
+          <span class="tag">Takeaway</span>
+          <span>Population imbalance means our later correlation analyses will be most reliable for larger groups.</span>
+        </div>
       </div>
     </section>
 
-    <section id="mental-health" class="mental-health section">
-      <div class="content">
-        <h2>Mental Health</h2>
+    <!-- Step 2 — Record Quality -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">2</div>
+        <p class="step-question">Can we trust the data equally?</p>
+        <h2>Record quality varies by race.</h2>
+        <p class="step-body">
+          Not all survey records are equally usable. Some are flagged as unreliable
+          due to small samples or high variance. The differences across groups
+          are striking.
+        </p>
+        <div class="viz-card">
+          <iframe
+            src="https://public.tableau.com/views/MentalHealth-RecordQualityAcrossDifferentRaces/RecordQualityAcrossDifferentRace?:showVizHome=no"
+            allowfullscreen></iframe>
+        </div>
+        <div class="step-takeaway">
+          <span class="tag">Takeaway</span>
+          <span>Fewer people → lower-quality records. There's a disparity in the data itself.</span>
+        </div>
+      </div>
+    </section>
 
-        <article class="story-block">
-          <h3>Diagnosed Depression or Anxiety in Children (Ages 3–17)</h3>
+    <!-- Step 3 — State Valid Records -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">3</div>
+        <p class="step-question">Where are the gaps geographically?</p>
+        <h2>Valid records differ state by state.</h2>
+        <p class="step-body">
+          Some states have robust records across all races; others have almost
+          none for minority groups. This reveals which regions we can analyze
+          confidently.
+        </p>
+        <div class="viz-card">
+          <iframe
+            src="https://public.tableau.com/views/MentalHealth-ValidRecordDisparityAmongDifferentStates/StateValidRecordCount?:showVizHome=no"
+            allowfullscreen></iframe>
+        </div>
+        <div class="step-takeaway">
+          <span class="tag">Takeaway</span>
+          <span>Geographic coverage is uneven — future race-specific analyses must account for missing states.</span>
+        </div>
+      </div>
+    </section>
 
-          <p class="story-text">
-            This view shows that Maine stays at the high end across 2016–2022 for the share of children ages 3–17 diagnosed with
-            depression or anxiety. The pattern reaches its highest point at about 23% in 2021, suggesting that Maine consistently
-            stands out relative to many other states in this period.
-          </p>
+    <!-- Transition -->
+    <section class="story-transition">
+      <div class="content reveal">
+        <div class="dot-row">
+          <span></span><span></span><span></span>
+        </div>
+        <p>Now that we know <em>who</em> is in the data and <em>how reliable</em>
+        it is, let's see what it tells us about
+        <strong>mental health outcomes</strong>.</p>
+      </div>
+    </section>
 
-          <div class="viz-card">
-            <div class="tableauPlaceholder" id="viz1">
-              <noscript>
-                <a href="#">
-                  <img
-                    alt="Children Diagnosed with Depression or Anxiety by State (Ages 3–17)"
-                    src="https://public.tableau.com/static/images/me/mental_17749285540910/ChildDepressionAnxietyStateTrend/1_rss.png"
-                    style="border: none"
-                  />
-                </a>
-              </noscript>
-              <object class="tableauViz" style="display:none;">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="mental_17749285540910/ChildDepressionAnxietyStateTrend" />
-                <param name="tabs" value="no" />
-                <param name="toolbar" value="yes" />
-                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/ChildDepressionAnxietyStateTrend/1.png" />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_overlay" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="en-US" />
-                <param name="filter" value="publish=yes" />
-              </object>
-            </div>
+    <!-- Step 4 — Average Anxiety -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">4</div>
+        <p class="step-question">Do anxiety rates differ across races?</p>
+        <h2>Average anxiety varies significantly.</h2>
+        <p class="step-body">
+          Some groups report notably higher rates of childhood anxiety than
+          others. The disparities are clear.
+        </p>
+        <div class="viz-card">
+          <iframe
+            src="https://public.tableau.com/views/MentalHealth-AverageAnxietyPercentageAcrossDifferentRaceForallLocationsYears/averageanxietypercentageacrossdifferentrace?:showVizHome=no"
+            allowfullscreen></iframe>
+        </div>
+        <div class="step-takeaway">
+          <span class="tag">Takeaway</span>
+          <span>Anxiety is not experienced equally — differences in reporting, access, and culture may all play a role.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 5 — Anxiety Over Time -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">5</div>
+        <p class="step-question">Are things getting better — or worse?</p>
+        <h2>Anxiety trends tell different stories.</h2>
+        <p class="step-body">
+          Some groups show a clear upward trend year over year; others remain
+          stable. These trajectories guide our deeper analyses.
+        </p>
+        <div class="viz-card">
+          <iframe
+            src="https://public.tableau.com/views/MentalHealth-AnxietyChildPercentageOverTimeForDifferentRaces/changeofanxietyoveryearfordifferentrace?:showVizHome=no"
+            allowfullscreen></iframe>
+        </div>
+        <div class="step-takeaway">
+          <span class="tag">Takeaway</span>
+          <span>The gap between racial groups may be widening — a signal worth investigating further.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Next -->
+    <section class="story-step whats-next-section">
+      <div class="content reveal">
+        <h2>What's Next?</h2>
+        <p class="step-body">
+          This overview sets the stage. Use the tabs above to dive into each racial
+          group — exploring state-level variation, socioeconomic correlations, and
+          potential drivers.
+        </p>
+        <div class="next-grid">
+          <div class="next-card" data-goto="white">
+            <div class="card-icon">👤</div>
+            <strong>White</strong>
+            <span class="card-status">Coming soon</span>
           </div>
-
-        </article>
-
-        <article class="story-block">
-          <h3>Persistent Sadness or Hopelessness in High School Students</h3>
-
-          <p class="story-text">
-            In contrast to the first view, Maine remains below the U.S. average across 2009–2023 for persistent sadness or
-            hopelessness among high school students. Maine still rises to around 38%, but that is below the U.S. peak of 42%,
-            showing a different pattern depending on which mental health indicator is examined.
-          </p>
-
-          <div class="viz-card">
-            <div class="tableauPlaceholder" id="viz2">
-              <noscript>
-                <a href="#">
-                  <img
-                    alt="Persistent Sadness or Hopelessness Among High School Students: Maine vs U.S. Average"
-                    src="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_SadorHopelessTrend/1_rss.png"
-                    style="border: none"
-                  />
-                </a>
-              </noscript>
-              <object class="tableauViz" style="display:none;">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="mental_17749285540910/MainevsU_S_SadorHopelessTrend" />
-                <param name="tabs" value="no" />
-                <param name="toolbar" value="yes" />
-                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_SadorHopelessTrend/1.png" />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_overlay" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="en-US" />
-                <param name="filter" value="publish=yes" />
-              </object>
-            </div>
+          <div class="next-card" data-goto="black">
+            <div class="card-icon">👤</div>
+            <strong>Black</strong>
+            <span class="card-status">Coming soon</span>
           </div>
-
-        </article>
-
-        <article class="story-block">
-          <h3>Uninsured Children as One Possible Driver</h3>
-
-          <p class="story-text">
-            This view introduces insurance coverage as one possible factor related to children's health outcomes. Maine stays at
-            or below the U.S. level for uninsured children in most years, which suggests that insurance alone may not fully explain
-            the patterns seen in the earlier mental health charts and that additional factors should be explored.
-          </p>
-
-          <div class="viz-card">
-            <div class="tableauPlaceholder" id="viz3">
-              <noscript>
-                <a href="#">
-                  <img
-                    alt="Uninsured Children (Ages 0–18): Maine vs U.S."
-                    src="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_ChildInsuranceTrend/1_rss.png"
-                    style="border: none"
-                  />
-                </a>
-              </noscript>
-              <object class="tableauViz" style="display:none;">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="mental_17749285540910/MainevsU_S_ChildInsuranceTrend" />
-                <param name="tabs" value="no" />
-                <param name="toolbar" value="yes" />
-                <param name="static_image" value="https://public.tableau.com/static/images/me/mental_17749285540910/MainevsU_S_ChildInsuranceTrend/1.png" />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_overlay" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="en-US" />
-                <param name="filter" value="publish=yes" />
-              </object>
-            </div>
+          <div class="next-card" data-goto="hispanic">
+            <div class="card-icon">👤</div>
+            <strong>Hispanic</strong>
+            <span class="card-status">Coming soon</span>
           </div>
+          <div class="next-card" data-goto="asian">
+            <div class="card-icon">👤</div>
+            <strong>Asian</strong>
+            <span class="card-status">Coming soon</span>
+          </div>
+          <div class="next-card" data-goto="multiracial">
+            <div class="card-icon">👥</div>
+            <strong>Two+ Races</strong>
+            <span class="card-status">Coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </article>
+  </main>
+
+  <!-- ============================================================
+       TABs: RACE-SPECIFIC (placeholders)
+       ============================================================ -->
+  <main class="tab-content" id="tab-white">
+    <section class="story-step placeholder-section">
+      <div class="content reveal">
+        <span class="placeholder-badge">In Progress</span>
+        <h2>White — Deep Dive</h2>
+        <p class="step-body">
+          State-level analysis, anxiety correlations, and socioeconomic factors
+          for the White child population.
+        </p>
       </div>
     </section>
   </main>
 
-  <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+  <main class="tab-content" id="tab-black">
+    <section class="story-step placeholder-section">
+      <div class="content reveal">
+        <span class="placeholder-badge">In Progress</span>
+        <h2>Black — Deep Dive</h2>
+        <p class="step-body">
+          State-level analysis, anxiety correlations, and socioeconomic factors
+          for the Black child population.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main class="tab-content" id="tab-hispanic">
+    <section class="story-step placeholder-section">
+      <div class="content reveal">
+        <span class="placeholder-badge">In Progress</span>
+        <h2>Hispanic — Deep Dive</h2>
+        <p class="step-body">
+          State-level analysis, anxiety correlations, and socioeconomic factors
+          for the Hispanic child population.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main class="tab-content" id="tab-asian">
+    <section class="story-step placeholder-section">
+      <div class="content reveal">
+        <span class="placeholder-badge">In Progress</span>
+        <h2>Asian — Deep Dive</h2>
+        <p class="step-body">
+          State-level analysis, anxiety correlations, and socioeconomic factors
+          for the Asian child population.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main class="tab-content" id="tab-multiracial">
+    <section class="story-step placeholder-section">
+      <div class="content reveal">
+        <span class="placeholder-badge">In Progress</span>
+        <h2>Two+ Races — Deep Dive</h2>
+        <p class="step-body">
+          State-level analysis, anxiety correlations, and socioeconomic factors
+          for the Two-or-More-Races child population.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">CS 6730 — Data Visualization Project</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
