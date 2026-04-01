@@ -6,10 +6,13 @@ html { scroll-behavior: smooth; }
 :root {
   --navy: #14213d;
   --deep: #1b2a4a;
-  --coral: #e76f51;
+  --coral: #fe6ec6;
   --coral-light: #fce8e2;
   --gold: #f4a261;
   --sage: #2a9d8f;
+  --pink: #e05a8a;
+  --pink-light: #fce8f0;
+  --mint: #4ecab7;
   --cream: #faf8f5;
   --warm-white: #ffffff;
   --text: #2d2d2d;
@@ -48,9 +51,10 @@ body::after {
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(231,111,81,.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(42,157,143,.12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(244,162,97,.08) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 55% at 15% 75%, rgba(224,90,138,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(78,202,183,.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 55% 45%, rgba(244,162,97,.09) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 35% at 80% 80%, rgba(224,90,138,.08) 0%, transparent 50%);
 }
 
 /* Decorative rotating circles */
@@ -78,8 +82,9 @@ body::after {
   font-family: var(--font-body);
   font-size: .72rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 3px;
-  color: var(--coral);
-  background: rgba(231,111,81,.12);
+  color: var(--pink);
+  background: rgba(224,90,138,.12);
+  border: 1px solid rgba(224,90,138,.2);
   padding: 6px 18px; border-radius: 50px;
   margin-bottom: 28px;
   animation: fadeInUp .9s ease-out .15s both;
@@ -98,6 +103,24 @@ body::after {
   font-size: 1.15rem; color: rgba(255,255,255,.55);
   max-width: 480px; margin: 0 auto 36px;
   animation: fadeInUp .9s ease-out .4s both;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 48px;
+  z-index: 1;
+  pointer-events: none;
+  animation: fadeInUp 1s ease-out .4s both;
+}
+.hero-bg-image img {
+  width: min(860px, 90%);
+  height: auto;
+  mix-blend-mode: screen;
+  opacity: 0.8;
 }
 
 .scroll-hint {
@@ -133,7 +156,7 @@ body::after {
   transition: all .25s ease; white-space: nowrap;
 }
 .tab-btn:hover { color: var(--text); }
-.tab-btn.active { color: var(--navy); border-bottom-color: var(--coral); }
+.tab-btn.active { color: var(--navy); border-bottom-color: var(--pink); }
 
 /* ===== TAB CONTENT ===== */
 .tab-content { display: none; }
@@ -168,16 +191,17 @@ body::after {
 .step-num {
   display: inline-flex; align-items: center; justify-content: center;
   width: 36px; height: 36px; border-radius: 50%;
-  background: var(--coral); color: #fff;
+  background: linear-gradient(135deg, var(--pink), var(--coral));
+  color: #fff;
   font-size: .82rem; font-weight: 800;
   margin-bottom: 14px;
-  box-shadow: 0 4px 14px rgba(231,111,81,.25);
+  box-shadow: 0 4px 14px rgba(224,90,138,.3);
 }
 
 .step-question {
   font-size: .82rem; font-weight: 800;
   text-transform: uppercase; letter-spacing: 2.5px;
-  color: var(--coral); margin-bottom: 10px;
+  color: var(--pink); margin-bottom: 10px;
 }
 
 .story-step h2 {
@@ -211,17 +235,17 @@ body::after {
   display: flex; align-items: flex-start; gap: 12px;
   font-size: .92rem; color: var(--text-light);
   padding: 16px 20px;
-  background: linear-gradient(135deg, #eef4fb, #f0f6fd);
+  background: linear-gradient(135deg, #fdf0f6, #f0f8f6);
   border-radius: 12px;
-  border-left: 4px solid var(--sage);
+  border-left: 4px solid var(--pink);
 }
 
 .step-takeaway .tag {
   flex-shrink: 0;
   font-size: .65rem; font-weight: 800;
   text-transform: uppercase; letter-spacing: 1.5px;
-  color: var(--sage);
-  background: rgba(42,157,143,.1);
+  color: var(--pink);
+  background: rgba(224,90,138,.1);
   padding: 4px 10px; border-radius: 6px;
   margin-top: 1px;
 }
@@ -248,13 +272,14 @@ body::after {
   font-size: 1.5rem; color: rgba(255,255,255,.8);
   max-width: 560px; margin: 0 auto; line-height: 1.6;
 }
-.story-transition em { color: var(--coral); font-style: italic; }
+.story-transition em { color: var(--mint); font-style: italic; }
 .story-transition strong { color: #fff; }
 
 .dot-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; }
-.dot-row span { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); opacity: .4; }
+.dot-row span { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); opacity: .5; }
 .dot-row span:nth-child(2) { background: var(--gold); opacity: .5; }
-.dot-row span:nth-child(3) { background: var(--sage); opacity: .4; }
+.dot-row span:nth-child(3) { background: var(--mint); opacity: .5; }
+
 
 /* ===== WHAT'S NEXT ===== */
 .whats-next-section { background: var(--cream) !important; }
@@ -279,22 +304,40 @@ body::after {
 
 .next-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--coral), var(--gold));
+  background: linear-gradient(90deg, var(--pink), var(--gold));
   opacity: 0; transition: opacity .25s ease;
 }
 .next-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 36px rgba(0,0,0,.1);
-  border-color: rgba(231,111,81,.15);
+  border-color: rgba(231,111,81,.2);
 }
+.next-card[data-goto="black"]:hover    { border-color: rgba(42,157,143,.2); }
+.next-card[data-goto="hispanic"]:hover { border-color: rgba(244,162,97,.2); }
+.next-card[data-goto="asian"]:hover    { border-color: rgba(199,125,255,.2); }
+.next-card[data-goto="multiracial"]:hover { border-color: rgba(199,125,255,.2); }
 .next-card:hover::before { opacity: 1; }
 
 .next-card .card-icon {
-  width: 44px; height: 44px; border-radius: 12px;
-  background: var(--coral-light);
+  width: 72px; height: 72px; border-radius: 16px;
+  background: transparent;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
+  overflow: visible;
 }
+.next-card .card-icon img {
+  width: 72px; height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.12));
+  transition: transform .25s ease;
+}
+.next-card:hover .card-icon img { transform: scale(1.1); }
+
+/* Per-race top-bar accent colors */
+.next-card[data-goto="white"]::before    { background: linear-gradient(90deg, #f4a261, #e76f51); }
+.next-card[data-goto="black"]::before    { background: linear-gradient(90deg, #2a9d8f, #1b7a6e); }
+.next-card[data-goto="hispanic"]::before { background: linear-gradient(90deg, #e9c46a, #f4a261); }
+.next-card[data-goto="asian"]::before    { background: linear-gradient(90deg, #c77dff, #9b5de5); }
+.next-card[data-goto="multiracial"]::before { background: linear-gradient(90deg, #e76f51, #c77dff, #2a9d8f); }
 
 .next-card strong { font-size: .95rem; color: var(--navy); }
 
@@ -376,4 +419,5 @@ body::after {
   .hero { min-height: 70vh; }
   .viz-card iframe { height: 400px; }
   .next-grid { grid-template-columns: 1fr 1fr; }
+
 }
