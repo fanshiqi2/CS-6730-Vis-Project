@@ -324,6 +324,32 @@ body::after {
   margin-bottom: 16px;
 }
 
+/* ===== GEO TAB — TABLEAU EMBEDS ===== */
+.tableauPlaceholder.geo-viz {
+  width: 100%;
+  min-height: 750px;
+  position: relative;
+}
+
+/* Force Tableau-generated iframes to fill the card width */
+.tableauPlaceholder.geo-viz iframe {
+  width: 100% !important;
+  height: 750px !important;
+  display: block;
+  border: none;
+}
+
+.tableauPlaceholder.geo-viz-tall {
+  min-height: 1600px;
+}
+
+.tableauPlaceholder.geo-viz-tall iframe {
+  width: 100% !important;
+  height: 1600px !important;
+  display: block;
+  border: none;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
   padding: 32px 24px; text-align: center;
