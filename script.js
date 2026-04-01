@@ -1,28 +1,37 @@
-function resizeTableauViz(placeholderId) {
-  const divElement = document.getElementById(placeholderId);
-  if (!divElement) return;
+document.addEventListener('DOMContentLoaded', () => {
 
-  const vizElement = divElement.getElementsByTagName("object")[0];
-  if (!vizElement) return;
+  /* ===== Tab Switching ===== */
+  const btns   = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-content');
 
-  vizElement.style.width = "100%";
-
-  if (window.innerWidth > 1200) {
-    vizElement.style.height = "760px";
-  } else if (window.innerWidth > 900) {
-    vizElement.style.height = "680px";
-  } else if (window.innerWidth > 600) {
-    vizElement.style.height = "560px";
-  } else {
-    vizElement.style.height = "460px";
+  function switchTab(id) {
+    btns.forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+    panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+    window.scrollTo({ top: document.getElementById('tabBar').offsetTop, behavior: 'smooth' });
+    // re-observe reveals in the newly-visible tab
+    setTimeout(observeReveals, 100);
   }
-}
 
-function initializeTableauViz() {
-  resizeTableauViz("viz1");
-  resizeTableauViz("viz2");
-  resizeTableauViz("viz3");
-}
+  btns.forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
 
-window.addEventListener("load", initializeTableauViz);
-window.addEventListener("resize", initializeTableauViz);
+  // "What's Next" cards also switch tabs
+  document.querySelectorAll('.next-card[data-goto]').forEach(c => {
+    c.addEventListener('click', () => switchTab(c.dataset.goto));
+  });
+
+  /* ===== Scroll Reveal ===== */
+  function observeReveals() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+  }
+
+  observeReveals();
+});
