@@ -30,179 +30,545 @@
     </div>
   </header>
 
-  <!-- ===== TABS ===== -->
+  <!-- ===== TAB BAR ===== -->
   <nav class="tab-bar" id="tabBar">
     <div class="tab-inner">
-      <button class="tab-btn active" data-tab="overview">Overview</button>
-      <button class="tab-btn" data-tab="white">White</button>
-      <button class="tab-btn" data-tab="black">Black</button>
-      <button class="tab-btn" data-tab="hispanic">Hispanic</button>
-      <button class="tab-btn" data-tab="asian">Asian</button>
-      <button class="tab-btn" data-tab="multiracial">Two+ Races</button>
+      <button class="tab-btn active" data-tab="problem">Problem Statement</button>
+      <button class="tab-btn" data-tab="population">Data Foundations</button>
+      <button class="tab-btn" data-tab="disparity">Anxiety Disparities</button>
+      <button class="tab-btn" data-tab="geography">Geographic Patterns</button>
+      <button class="tab-btn" data-tab="correlation">Correlation Analysis</button>
     </div>
   </nav>
 
-  <!-- ============================================================
-       TAB: OVERVIEW
-       ============================================================ -->
-  <main class="tab-content active" id="tab-overview">
 
-    <!-- Step 1 — Population -->
+  <!-- ============================================================
+       SECTION 1: PROBLEM STATEMENT
+       ============================================================ -->
+  <main class="tab-content active" id="tab-problem">
+
     <section class="story-step">
+      <img class="sec-deco sec-deco--tr" src="images/read_asian_girl.png" alt="" aria-hidden="true" />
+      <div class="content reveal">
+        <p class="step-question">What are we looking at?</p>
+        <h2>Children's Anxiety &amp; Race in the United States</h2>
+        <p class="step-body">
+          Anxiety and depression don't affect all children equally. Across the United States, children from
+          different racial and ethnic backgrounds experience mental health challenges at very different rates —
+          yet these disparities are often invisible in aggregate statistics. This project examines those gaps:
+          <strong>who</strong> is most affected, <strong>where</strong>, and <strong>why</strong>.
+        </p>
+
+        <!-- Key Indicator -->
+        <div class="definition-card">
+          <div class="definition-label">Key Indicator</div>
+          <h3>How we measure childhood anxiety</h3>
+          <p>
+            A child is counted as having <strong>anxiety or depression</strong> if their parent or guardian
+            confirmed that a doctor or healthcare provider has ever diagnosed them with either condition.
+            This applies to children between <strong>ages 3 and 17</strong>.
+          </p>
+          <p class="definition-note">
+            Parents were asked: <em>"Has a doctor or other health care provider ever told you that [child]
+            had depression?"</em> or <em>"…that [child] had anxiety problems?"</em> A "yes" to either
+            question qualifies the child for inclusion.
+          </p>
+        </div>
+
+        <!-- Story Map -->
+        <div class="story-map-wrapper">
+          <h3 class="story-map-heading">How to Read This Project</h3>
+          <p class="story-map-subtitle">We recommend following the sections in order.
+          Click any card below to jump directly to that section.</p>
+
+          <div class="story-map">
+
+            <div class="story-map-node active" data-goto="problem">
+              <div class="story-map-num">1</div>
+              <div class="story-map-name">Problem Statement</div>
+              <div class="story-map-desc">The question, the data, and the key definitions</div>
+              <div class="story-map-tag">You are here</div>
+            </div>
+
+            <div class="story-map-arrow">→</div>
+
+            <div class="story-map-node" data-goto="population">
+              <div class="story-map-num">2</div>
+              <div class="story-map-name">Data Foundations</div>
+              <div class="story-map-desc">Who's in the data, and how reliable is it?</div>
+            </div>
+
+            <div class="story-map-arrow">→</div>
+
+            <div class="story-map-node" data-goto="disparity">
+              <div class="story-map-num">3</div>
+              <div class="story-map-name">Anxiety Disparities</div>
+              <div class="story-map-desc">How do anxiety rates differ by race?</div>
+            </div>
+
+            <div class="story-map-arrow">→</div>
+
+            <div class="story-map-node" data-goto="geography">
+              <div class="story-map-num">4</div>
+              <div class="story-map-name">Geographic Patterns</div>
+              <div class="story-map-desc">Where are children most affected?</div>
+            </div>
+
+            <div class="story-map-arrow">→</div>
+
+            <div class="story-map-node" data-goto="correlation">
+              <div class="story-map-num">5</div>
+              <div class="story-map-name">Correlation Analysis</div>
+              <div class="story-map-desc">What factors are linked to anxiety rates?</div>
+            </div>
+
+          </div><!-- /.story-map -->
+        </div><!-- /.story-map-wrapper -->
+
+      </div><!-- /.content -->
+    </section>
+
+    <div class="section-nav-bar">
+      <div class="section-nav">
+        <span></span>
+        <button class="nav-btn next" data-goto="population">
+          Next: Data Foundations <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+  </main><!-- /#tab-problem -->
+
+
+  <!-- ============================================================
+       SECTION 2: DATA FOUNDATIONS
+       ============================================================ -->
+  <main class="tab-content" id="tab-population">
+
+    <!-- Viz 2-1: Population Distribution -->
+    <section class="story-step">
+      <img class="sec-deco sec-deco--br" src="images/play_white_girl.png" alt="" aria-hidden="true" />
       <div class="content reveal">
         <div class="step-num">1</div>
         <p class="step-question">Who is in the data?</p>
         <h2>The population is far from equal.</h2>
         <p class="step-body">
           Before diving into mental health outcomes, we need to understand
-          <strong>who we're looking at</strong>. White and Two-or-More-Races
-          groups dominate the sample — meaning some groups lack enough data
-          for deep analysis.
+          <strong>who we're looking at</strong>. White children and Two-or-More-Races
+          children dominate the sample, and some groups simply lack enough records
+          for deeper analysis.
         </p>
         <div class="viz-card">
           <iframe
             src="https://public.tableau.com/views/MentalHealth-AverageChildPopulationForDifferentRacesAcrossYear/childpopulationdistribution?:showVizHome=no"
             allowfullscreen></iframe>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>Population imbalance means our later correlation analyses will be most reliable for larger groups.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group makes up the largest share of the sample — over half of all records!"
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "I am included, but my group is much smaller than the Hispanic & White groups, so it may show less about me."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group is the second largest among all groups, making up around 25% of population."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group is the smallest in the sample, and it is hard to see, so some things about me may be missing."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group only has a small share (4.6%) in the population, but it is still quite visible."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Step 2 — Record Quality -->
+    <!-- Viz 2-2: Record Quality -->
     <section class="story-step">
       <div class="content reveal">
         <div class="step-num">2</div>
         <p class="step-question">Can we trust the data equally?</p>
         <h2>Record quality varies by race.</h2>
         <p class="step-body">
-          Not all survey records are equally usable. Some are flagged as unreliable
-          due to small samples or high variance. The differences across groups
-          are striking.
+          Not all survey records are equally usable. Some are flagged as unreliable due to small
+          samples or high variance. The differences across groups are striking.
         </p>
         <div class="viz-card">
           <iframe
             src="https://public.tableau.com/views/MentalHealth-RecordQualityAcrossDifferentRaces/RecordQualityAcrossDifferentRace?:showVizHome=no"
             allowfullscreen></iframe>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>Fewer people → lower-quality records. There's a disparity in the data itself.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Most of my records (~86%) are valid, so I have strong data coverage across the country."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Around 70% of my records are flagged as unreliable and around 14% of my records are missing."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Though I'm in second largest group, large amount of suppressed estimates (~80%) resulted in gaps in my story."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "I have the highest suppression rate (~82%), so many of my state-level estimates simply aren't shown."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "I am in a small group, but my data quality is almost the same as the White group and better than the other groups."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Step 3 — State Valid Records -->
+    <!-- Viz 2-3: State Valid Records -->
     <section class="story-step">
+      <img class="sec-deco sec-deco--tl sec-deco--sm" src="images/hispanic_boy.png" alt="" aria-hidden="true" />
       <div class="content reveal">
         <div class="step-num">3</div>
-        <p class="step-question">Where are the gaps geographically?</p>
+        <p class="step-question">Where are the geographic gaps?</p>
         <h2>Valid records differ state by state.</h2>
         <p class="step-body">
-          Some states have robust records across all races; others have almost
-          none for minority groups. This reveals which regions we can analyze
-          confidently.
+          Some states have robust records across all races; others have almost none for minority groups.
+          This reveals which regions we can analyze confidently — and which we cannot.
         </p>
         <div class="viz-card">
           <iframe
             src="https://public.tableau.com/views/MentalHealth-ValidRecordDisparityAmongDifferentStates/StateValidRecordCount?:showVizHome=no"
             allowfullscreen></iframe>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>Geographic coverage is uneven — future race-specific analyses must account for missing states.</span>
-        </div>
+
+        <!-- <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Almost every state has valid data for me — I'm covered coast to coast."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Several states don't have enough data to report my anxiety rates reliably."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Some southwestern states cover me well — elsewhere, my story has gaps."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Many states can't report reliable data for my group — I'm often invisible on maps."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My coverage has improved over the years, but some states still leave me out."
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
 
-    <!-- Transition -->
-    <section class="story-transition">
+    <!-- Section Finale -->
+    <section class="story-step section-finale">
       <div class="content reveal">
-        <div class="dot-row">
-          <span></span><span></span><span></span>
+        <div class="final-takeaway">
+          <div class="final-takeaway-label">Section Takeaway</div>
+          <p>
+            The data is not equally representative across all groups. Smaller populations face higher
+            data suppression, meaning some children's stories simply can't be told at the state level —
+            a reminder that <strong>data gaps are themselves a form of disparity</strong>. As you explore
+            the following sections, keep in mind that the groups with the most reliable records may not
+            reflect the full picture.
+          </p>
         </div>
-        <p>Now that we know <em>who</em> is in the data and <em>how reliable</em>
-        it is, let's see what it tells us about
-        <strong>mental health outcomes</strong>.</p>
       </div>
     </section>
 
-    <!-- Step 4 — Average Anxiety -->
+    <div class="section-nav-bar">
+      <div class="section-nav">
+        <button class="nav-btn prev" data-goto="problem">
+          <span class="arrow">←</span> Problem Statement
+        </button>
+        <button class="nav-btn next" data-goto="disparity">
+          Anxiety Disparities <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+  </main><!-- /#tab-population -->
+
+
+  <!-- ============================================================
+       SECTION 3: ANXIETY DISPARITIES
+       ============================================================ -->
+  <main class="tab-content" id="tab-disparity">
+
+    <!-- Viz 3-1: Average Anxiety -->
     <section class="story-step">
+      <img class="sec-deco sec-deco--tr" src="images/apple_black_girl.png" alt="" aria-hidden="true" />
       <div class="content reveal">
-        <div class="step-num">4</div>
+        <div class="step-num">1</div>
         <p class="step-question">Do anxiety rates differ across races?</p>
-        <h2>Average anxiety varies significantly.</h2>
+        <h2>Average anxiety varies significantly by race.</h2>
         <p class="step-body">
-          Some groups report notably higher rates of childhood anxiety than
-          others. The disparities are clear.
+          Some groups report notably higher rates of childhood anxiety than others. The disparities
+          are clear — and they can't be explained by chance alone.
         </p>
         <div class="viz-card">
           <iframe
             src="https://public.tableau.com/views/MentalHealth-AverageAnxietyPercentageAcrossDifferentRaceForallLocationsYears/averageanxietypercentageacrossdifferentrace?:showVizHome=no"
             allowfullscreen></iframe>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>Anxiety is not experienced equally — differences in reporting, access, and culture may all play a role.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group shows one of the higher anxiety rates — better access to diagnosis may be part of why."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My rate looks lower — but barriers to diagnosis, not fewer real cases, may explain this."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My rates are among the lower ones — cultural attitudes toward mental health may shape how families respond."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My reported rate is the lowest — mental health stigma in many Asian communities often keeps anxiety hidden."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group has the highest reported rates — navigating multiple cultural identities may add unique pressure."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Step 5 — Anxiety Over Time -->
+    <!-- Viz 3-2: Anxiety Over Time -->
     <section class="story-step">
+      <img class="sec-deco sec-deco--bl" src="images/black_boy_play.png" alt="" aria-hidden="true" />
       <div class="content reveal">
-        <div class="step-num">5</div>
+        <div class="step-num">2</div>
         <p class="step-question">Are things getting better — or worse?</p>
-        <h2>Anxiety trends tell different stories.</h2>
+        <h2>Anxiety trends tell different stories over time.</h2>
         <p class="step-body">
-          Some groups show a clear upward trend year over year; others remain
-          stable. These trajectories guide our deeper analyses.
+          Some groups show a clear upward trend year over year; others remain relatively stable.
+          These trajectories guide our deeper analyses.
         </p>
         <div class="viz-card">
           <iframe
             src="https://public.tableau.com/views/MentalHealth-AnxietyChildPercentageOverTimeForDifferentRaces/changeofanxietyoveryearfordifferentrace?:showVizHome=no"
             allowfullscreen></iframe>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>The gap between racial groups may be widening — a signal worth investigating further.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group's anxiety rate has risen steadily — especially noticeable after 2019."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "I'm rising too, but from a lower baseline — the gap between me and White children persists."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My rates have stayed relatively stable — though with the trends I see in others, that could change."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My reported anxiety is growing slowly but remains lower than all other groups."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group's rates have climbed the steepest — the trend line for us is the most worrying."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Geo Transition -->
-    <section class="story-transition">
+    <!-- Section Finale -->
+    <section class="story-step section-finale">
       <div class="content reveal">
-        <div class="dot-row">
-          <span></span><span></span><span></span>
+        <div class="final-takeaway">
+          <div class="final-takeaway-label">Section Takeaway</div>
+          <p>
+            The gap between racial groups isn't a snapshot — <strong>it's widening</strong>. Multiracial
+            children face the highest and fastest-growing anxiety rates, while Asian children report the
+            lowest. These differences suggest that race-neutral mental health policies may not be enough.
+            Targeted, culturally aware interventions are needed for the groups most affected.
+          </p>
         </div>
-        <p>Now let's see where these rates are highest — and how <em>geography</em> shapes child mental health across the country.</p>
       </div>
     </section>
 
-    <!-- Step 6 — National Map -->
+    <div class="section-nav-bar">
+      <div class="section-nav">
+        <button class="nav-btn prev" data-goto="population">
+          <span class="arrow">←</span> Data Foundations
+        </button>
+        <button class="nav-btn next" data-goto="geography">
+          Geographic Patterns <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+  </main><!-- /#tab-disparity -->
+
+
+  <!-- ============================================================
+       SECTION 4: GEOGRAPHIC PATTERNS
+       ============================================================ -->
+  <main class="tab-content" id="tab-geography">
+
+    <!-- Viz 4-1: National Map -->
     <section class="story-step">
+      <img class="sec-deco sec-deco--br" src="images/play_asian_girl.png" alt="" aria-hidden="true" />
       <div class="content reveal">
-        <div class="step-num">6</div>
+        <div class="step-num">1</div>
         <p class="step-question">Where are anxiety rates highest?</p>
         <h2>Average Anxiety Rate Across States For All Races &amp; Years</h2>
         <p class="step-body">
-          Anxiety and depression rates among children and teens vary considerably across states,
-          ranging from under 9% to just over 20%.
-          Maine is the clear high at 0.2050, with North Dakota (0.1942) and Montana (0.1822)
-          also standing out as notably elevated. On the other end, California (0.0897) and
-          Nevada (0.0941) are the lowest in the country, followed by Texas (0.1021) and Georgia
-          (0.1074). The spread between the highest and lowest states is more than 11 percentage
-          points — a gap wide enough that where a child lives may matter as much as almost any
-          other factor.
+          Anxiety and depression rates among children vary considerably across states, ranging from under
+          9% to just over 20%. Maine is the clear high at 20.5%, with North Dakota (19.4%) and Montana
+          (18.2%) also notably elevated. On the other end, California (8.97%) and Nevada (9.41%) are the
+          lowest in the country. The spread is more than 11 percentage points — a gap wide enough that
+          where a child lives may matter as much as almost any other factor.
         </p>
         <div class="viz-card">
-          <div class="tableauPlaceholder geo-viz" id="viz4-overview">
+          <div class="tableauPlaceholder geo-viz" id="viz4-geography">
             <noscript>
-              <a href="#"><img alt="Average Anxiety Rate Across States For all Races &amp; Years" src="https://public.tableau.com/static/images/9Q/9QMY7TXP5/1_rss.png" style="border:none" /></a>
+              <a href="#"><img alt="Average Anxiety Rate Across States For all Races &amp; Years"
+                src="https://public.tableau.com/static/images/9Q/9QMY7TXP5/1_rss.png" style="border:none" /></a>
             </noscript>
             <object class="tableauViz" style="display:none;">
               <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
@@ -220,34 +586,77 @@
             </object>
           </div>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>Geography is a meaningful dimension — Northeastern states lead, Western states lag.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group's rates track closely with the national map — the Northeast is where I'm most affected."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My geographic pattern is different — the South has more data for me, but the risk varies widely."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My anxiety risk follows population density — more visible in the Sun Belt and Southwest."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group is often invisible on state maps — too few records to produce a reliable estimate."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "I show up high in unexpected places — states like Mississippi and Montana stand out for my group."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Step 7 — Regional View -->
+    <!-- Viz 4-2: Regional View -->
     <section class="story-step">
       <div class="content reveal">
-        <div class="step-num">7</div>
+        <div class="step-num">2</div>
         <p class="step-question">Do regions tell a clearer story?</p>
         <h2>Average Anxiety Rate by State and Region</h2>
         <p class="step-body">
           Grouping by region sharpens the picture. The Northeast has the widest internal spread —
-          New Jersey at 0.115 versus Maine at 0.205 — though most states cluster around 0.13–0.17.
-          The Midwest is similar, with North Dakota (0.194) pulling well ahead of Nebraska (0.118)
-          and Illinois (0.125). The South is the most tightly packed, mostly 0.12–0.15, with
-          Georgia (0.105) as the clear low. The West is the most striking: Montana sits at 0.185
-          while Hawaii (0.075), California (0.090), and Nevada (0.095) are the three lowest states
-          in the country — a 11-point gap within one region alone. Regional averages point in a
-          general direction, but the outliers raise the question of what else is driving these
-          gaps — which is where race comes in.
+          New Jersey at 11.5% versus Maine at 20.5%. The Midwest is similar, with North Dakota (19.4%)
+          pulling well ahead of Nebraska (11.8%). The South is the most tightly packed, mostly
+          12–15%, with Georgia (10.5%) as the clear low. The West is the most striking: Montana sits at
+          18.5% while Hawaii (7.5%), California (9.0%), and Nevada (9.5%) are the three lowest states
+          in the country — an 11-point gap within one region alone.
         </p>
         <div class="viz-card">
-          <div class="tableauPlaceholder geo-viz" id="viz5-overview">
+          <div class="tableauPlaceholder geo-viz" id="viz5-geography">
             <noscript>
-              <a href="#"><img alt="Average Anxiety Rate by State and Region" src="https://public.tableau.com/static/images/me/mental_health_exploration_with_geo/GeoAverageAnxietyRatebyStateandRegion/1_rss.png" style="border:none" /></a>
+              <a href="#"><img alt="Average Anxiety Rate by State and Region"
+                src="https://public.tableau.com/static/images/me/mental_health_exploration_with_geo/GeoAverageAnxietyRatebyStateandRegion/1_rss.png"
+                style="border:none" /></a>
             </noscript>
             <object class="tableauViz" style="display:none;">
               <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
@@ -267,35 +676,81 @@
             </object>
           </div>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>A clear east-to-west gradient — the Northeast leads while the West lags behind all other regions.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Northeast states like Maine show my highest rates; California and Nevada are my lowest."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "The South has more complete coverage for me — it's where my story comes through most clearly."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Texas and Florida have good coverage for me; the Mountain West is where my data gets sparse."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Hawaii stands out as one of the few states with reliable data for my group."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My rates in the Mountain West are notably higher than coastal states — an unexpected regional pattern."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Step 8 — Race Comparison Map -->
+    <!-- Viz 4-3: Race Comparison Map -->
     <section class="story-step">
+      <img class="sec-deco sec-deco--tl" src="images/play_twoRaces_girl.png" alt="" aria-hidden="true" />
       <div class="content reveal">
-        <div class="step-num">8</div>
+        <div class="step-num">3</div>
         <p class="step-question">Do White and Multiracial children follow the same geographic pattern?</p>
-        <h2>Average Anxiety Rate By State: Non-Hispanic White vs. Non-Hispanic Two or More Races</h2>
+        <h2>Anxiety Rate By State: Non-Hispanic White vs. Two or More Races</h2>
         <p class="step-body">
-          These two racial groups are selected because they have the broadest and most complete state-level data coverage across
-          years, providing the most reliable basis for geographic comparison.
+          These two groups are selected because they have the broadest and most complete state-level
+          data coverage across years, providing the most reliable basis for geographic comparison.
         </p>
         <p class="step-body">
-          Comparing Non-Hispanic White and Non-Hispanic Two or More Races children side by side reveals notable differences in
-          geographic distribution. For Non-Hispanic White children, the map tracks the national pattern — Maine and New
-          Hampshire darkest, the South and West mostly green, California and Hawaii at the low end.
-          The multiracial map tells a different story. Mississippi flips from light to one of the
-          darkest states, and Montana, North Dakota, and Indiana all run noticeably higher than
-          they do for White children. States that look low-risk for one group are not necessarily
-          low-risk for the other — race and place interact in ways a single map can't capture.
+          Side by side, the maps reveal a stark contrast. For Non-Hispanic White children, the pattern
+          tracks the national average — Maine and New Hampshire darkest, the South and West mostly light,
+          California and Hawaii at the low end. The Multiracial map tells a completely different story:
+          Mississippi flips from light to one of the darkest states, and Montana, North Dakota, and
+          Indiana all run noticeably higher than they do for White children. States that look low-risk
+          for one group are not necessarily low-risk for the other.
         </p>
         <div class="viz-card" style="overflow: visible;">
           <div class='tableauPlaceholder' id='viz1775077289235' style='position: relative'>
-            <noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/me/mental_health_exploration_with_geo/Dashboard1/1_rss.png' style='border: none' /></a></noscript>
+            <noscript><a href='#'><img alt='Dashboard 1 '
+              src='https://public.tableau.com/static/images/me/mental_health_exploration_with_geo/Dashboard1/1_rss.png'
+              style='border: none' /></a></noscript>
             <object class='tableauViz' style='display:none;'>
               <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
               <param name='embed_code_version' value='3' />
@@ -324,122 +779,164 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
         </div>
-        <div class="step-takeaway">
-          <span class="tag">Takeaway</span>
-          <span>The two groups face <strong>distinct</strong> geographic risk profiles — Multiracial children don't simply mirror the White pattern.</span>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My map follows the classic national pattern — Northeast high, West and South relatively low."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "This comparison focuses on the two groups with best coverage — my geographic story would look different."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My data coverage is more limited here — I don't show up fully on this particular comparison."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "Coverage gaps prevent my group from appearing in this comparison — another invisible moment for me."
+            </div>
+          </div>
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My map is strikingly different — Mississippi, Montana, and Indiana are high-risk for me, but not for White children."
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- What's Next -->
-    <section class="story-step whats-next-section">
+    <!-- Section Finale -->
+    <section class="story-step section-finale">
       <div class="content reveal">
-        <h2>What's Next?</h2>
-        <p class="step-body">
-          This overview sets the stage. Use the tabs above to dive into each racial
-          group — exploring state-level variation, socioeconomic correlations, and
-          potential drivers.
-        </p>
-        <div class="next-grid">
-          <div class="next-card" data-goto="white">
-            <div class="card-icon"><img src="images/white_icon.png" alt="White" /></div>
-            <strong>White</strong>
-            <span class="card-status">Coming soon</span>
-          </div>
-          <div class="next-card" data-goto="black">
-            <div class="card-icon"><img src="images/black_icon.png" alt="Black" /></div>
-            <strong>Black</strong>
-            <span class="card-status">Coming soon</span>
-          </div>
-          <div class="next-card" data-goto="hispanic">
-            <div class="card-icon"><img src="images/hispanic_icon.png" alt="Hispanic" /></div>
-            <strong>Hispanic</strong>
-            <span class="card-status">Coming soon</span>
-          </div>
-          <div class="next-card" data-goto="asian">
-            <div class="card-icon"><img src="images/asian_icon.png" alt="Asian" /></div>
-            <strong>Asian</strong>
-            <span class="card-status">Coming soon</span>
-          </div>
-          <div class="next-card" data-goto="multiracial">
-            <div class="card-icon"><img src="images/twoRaces_icon.png" alt="Two or More Races" /></div>
-            <strong>Two+ Races</strong>
-            <span class="card-status">Coming soon</span>
-          </div>
+        <div class="final-takeaway">
+          <div class="final-takeaway-label">Section Takeaway</div>
+          <p>
+            Where a child lives shapes their mental health risk as much as their race — but race and
+            geography interact in complex ways. <strong>The same state can be high-risk for one group
+            and low-risk for another</strong>, making place-based interventions alone insufficient.
+            A child's zip code and racial identity together paint a far more complete picture of their
+            mental health risk.
+          </p>
         </div>
       </div>
     </section>
 
-  </main>
+    <div class="section-nav-bar">
+      <div class="section-nav">
+        <button class="nav-btn prev" data-goto="disparity">
+          <span class="arrow">←</span> Anxiety Disparities
+        </button>
+        <button class="nav-btn next" data-goto="correlation">
+          Correlation Analysis <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+  </main><!-- /#tab-geography -->
 
 
   <!-- ============================================================
-       TABs: RACE-SPECIFIC (placeholders)
+       SECTION 5: CORRELATION ANALYSIS
        ============================================================ -->
-  <main class="tab-content" id="tab-white">
-    <section class="story-step placeholder-section">
-      <div class="content reveal">
-        <span class="placeholder-badge">In Progress</span>
-        <h2>White — Deep Dive</h2>
-        <p class="step-body">
-          State-level analysis, anxiety correlations, and socioeconomic factors
-          for the White child population.
-        </p>
-      </div>
-    </section>
-  </main>
+  <main class="tab-content" id="tab-correlation">
 
-  <main class="tab-content" id="tab-black">
-    <section class="story-step placeholder-section">
+    <section class="story-step">
+      <img class="sec-deco sec-deco--tr" src="images/write_girl_read.png" alt="" aria-hidden="true" />
+      <img class="sec-deco sec-deco--bl" src="images/asian_boy_present.png" alt="" aria-hidden="true" />
       <div class="content reveal">
-        <span class="placeholder-badge">In Progress</span>
-        <h2>Black — Deep Dive</h2>
+        <div class="step-num">1</div>
+        <p class="step-question">What factors are linked to anxiety rates?</p>
+        <h2>Investigating Correlates of Childhood Anxiety</h2>
         <p class="step-body">
-          State-level analysis, anxiety correlations, and socioeconomic factors
-          for the Black child population.
+          With a clearer picture of <em>who</em> is affected and <em>where</em>, we now turn to
+          <em>why</em>. This section explores potential indicators — socioeconomic, demographic, and
+          environmental — that may correlate with childhood anxiety rates across racial groups.
         </p>
-      </div>
-    </section>
-  </main>
 
-  <main class="tab-content" id="tab-hispanic">
-    <section class="story-step placeholder-section">
-      <div class="content reveal">
-        <span class="placeholder-badge">In Progress</span>
-        <h2>Hispanic — Deep Dive</h2>
-        <p class="step-body">
-          State-level analysis, anxiety correlations, and socioeconomic factors
-          for the Hispanic child population.
-        </p>
-      </div>
-    </section>
-  </main>
+        <div class="in-progress-block">
+          <span class="placeholder-badge">In Progress</span>
+          <p>
+            Correlation analyses for each racial group are currently being developed.
+            Check back soon for detailed findings and visualizations.
+          </p>
+          <div class="race-voices" style="margin-top: 28px;">
+            <div class="race-voice">
+              <div class="race-voice-top">
+                <img src="images/white_icon.png" alt="White child" />
+                <span class="race-voice-label">White</span>
+              </div>
+              <div class="race-voice-bubble">Coming soon…</div>
+            </div>
+            <div class="race-voice">
+              <div class="race-voice-top">
+                <img src="images/black_icon.png" alt="Black child" />
+                <span class="race-voice-label">Black</span>
+              </div>
+              <div class="race-voice-bubble">Coming soon…</div>
+            </div>
+            <div class="race-voice">
+              <div class="race-voice-top">
+                <img src="images/hispanic_icon.png" alt="Hispanic child" />
+                <span class="race-voice-label">Hispanic</span>
+              </div>
+              <div class="race-voice-bubble">Coming soon…</div>
+            </div>
+            <div class="race-voice">
+              <div class="race-voice-top">
+                <img src="images/asian_icon.png" alt="Asian child" />
+                <span class="race-voice-label">Asian</span>
+              </div>
+              <div class="race-voice-bubble">Coming soon…</div>
+            </div>
+            <div class="race-voice">
+              <div class="race-voice-top">
+                <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+                <span class="race-voice-label">Multiracial</span>
+              </div>
+              <div class="race-voice-bubble">Coming soon…</div>
+            </div>
+          </div>
+        </div>
 
-  <main class="tab-content" id="tab-asian">
-    <section class="story-step placeholder-section">
-      <div class="content reveal">
-        <span class="placeholder-badge">In Progress</span>
-        <h2>Asian — Deep Dive</h2>
-        <p class="step-body">
-          State-level analysis, anxiety correlations, and socioeconomic factors
-          for the Asian child population.
-        </p>
       </div>
     </section>
-  </main>
 
-  <main class="tab-content" id="tab-multiracial">
-    <section class="story-step placeholder-section">
-      <div class="content reveal">
-        <span class="placeholder-badge">In Progress</span>
-        <h2>Two+ Races — Deep Dive</h2>
-        <p class="step-body">
-          State-level analysis, anxiety correlations, and socioeconomic factors
-          for the Two-or-More-Races child population.
-        </p>
+    <div class="section-nav-bar">
+      <div class="section-nav">
+        <button class="nav-btn prev" data-goto="geography">
+          <span class="arrow">←</span> Geographic Patterns
+        </button>
+        <span></span>
       </div>
-    </section>
-  </main>
+    </div>
+
+  </main><!-- /#tab-correlation -->
+
 
   <footer class="site-footer">
     CS 6730 — Data Visualization Project
