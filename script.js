@@ -5,18 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const panels = document.querySelectorAll('.tab-content');
 
   function switchTab(id) {
+    // Activate the right tab button
     btns.forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+
+    // Show the right panel
     panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+
+    // Keep story-map node highlight in sync
+    document.querySelectorAll('.story-map-node').forEach(n => {
+      n.classList.toggle('active', n.dataset.goto === id);
+    });
+
+    // Scroll to tab bar
     window.scrollTo({ top: document.getElementById('tabBar').offsetTop, behavior: 'smooth' });
-    // re-observe reveals in the newly-visible tab
+
+    // Trigger reveal animations in the newly-visible panel
     setTimeout(observeReveals, 100);
   }
 
+  // Tab bar buttons
   btns.forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
 
-  // "What's Next" cards also switch tabs
-  document.querySelectorAll('.next-card[data-goto]').forEach(c => {
-    c.addEventListener('click', () => switchTab(c.dataset.goto));
+  // All [data-goto] elements: nav prev/next buttons + story-map nodes
+  document.querySelectorAll('[data-goto]').forEach(el => {
+    el.addEventListener('click', () => switchTab(el.dataset.goto));
   });
 
   /* ===== Scroll Reveal ===== */
