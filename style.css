@@ -212,7 +212,7 @@ body::after {
 
 .step-body {
   font-size: 1.02rem; color: var(--text-light);
-  max-width: 640px; margin-bottom: 32px;
+  max-width: 100%; margin-bottom: 32px;
 }
 .step-body strong { color: var(--navy); }
 
