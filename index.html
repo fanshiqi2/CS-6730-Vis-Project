@@ -775,10 +775,11 @@
 
 
   <!-- ============================================================
-       SECTION 5: CORRELATION ANALYSIS
-       ============================================================ -->
+      SECTION 5: CORRELATION ANALYSIS
+      ============================================================ -->
   <main class="tab-content" id="tab-correlation">
 
+    <!-- 5-1: Adverse Experiences -->
     <section class="story-step">
       <img class="sec-deco sec-deco--tr" src="images/write_girl_read.png" alt="" aria-hidden="true" />
       <img class="sec-deco sec-deco--bl" src="images/asian_boy_present.png" alt="" aria-hidden="true" />
@@ -786,7 +787,7 @@
         <div class="step-num">1</div>
         <p class="step-question">Are adverse experiences linked to teen mental health?</p>
         <h2>Adverse Experiences and Teen Mental Health by Race</h2>
-        <p class="step-body">
+        <p class="step-body correlation-intro">
           This dashboard explores how adverse experiences relate to anxiety and depression among children and teens
           across racial groups. Here, a child is counted as having experienced <strong>adverse experiences</strong>
           if they had <strong>two or more</strong> of the following: frequent socioeconomic hardship, parental divorce
@@ -794,19 +795,19 @@
           someone who was mentally ill or suicidal, living with someone who had a substance abuse problem, or racial bias.
         </p>
         <p class="step-body correlation-intro">
-          Across the groups with usable data, <strong>the relationship is consistently positive</strong> states with higher levels of
+          Across the groups with usable data, <strong>the relationship is consistently positive</strong>: states with higher levels of
           adverse experiences also tend to report higher levels of teen anxiety and depression. This pattern is
           statistically significant for every group shown in the dashboard, with all reported p-values below 0.05.
-          However, the strength of the relationship differs by race. The Asian group does not have enough
+          However, the strength of the relationship differs by race. The <strong>Asian</strong> group does not have enough
           reliable data for meaningful interpretation here, so it is excluded from the discussion below.
         </p>
 
         <div class="viz-card" style="overflow: visible;">
-          <div class='tableauPlaceholder' id='viz1775850213654' style='position: relative'>
+          <div class='tableauPlaceholder' id='viz1775877498061' style='position: relative'>
             <noscript>
               <a href='#'>
-                <img alt='Adverse Experiences and Teen Mental Health by Race'
-                  src='https://public.tableau.com/static/images/me/mental_health_exploration/Dashboard1/1_rss.png'
+                <img alt='Adverse Experiences and Teen Mental Health by Race '
+                  src='https://public.tableau.com/static/images/Ad/Adverse_Experiences_and_Tean_Mental_Health_by_Race/AdverseExperiencesandTeenMentalHealthbyRace/1_rss.png'
                   style='border: none' />
               </a>
             </noscript>
@@ -814,10 +815,10 @@
               <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
               <param name='embed_code_version' value='3' />
               <param name='site_root' value='' />
-              <param name='name' value='mental_health_exploration/Dashboard1' />
+              <param name='name' value='Adverse_Experiences_and_Tean_Mental_Health_by_Race&#47;AdverseExperiencesandTeenMentalHealthbyRace' />
               <param name='tabs' value='no' />
-              <param name='toolbar' value='no' />
-              <param name='static_image' value='https://public.tableau.com/static/images/me/mental_health_exploration/Dashboard1/1.png' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Ad/Adverse_Experiences_and_Tean_Mental_Health_by_Race/AdverseExperiencesandTeenMentalHealthbyRace/1.png' />
               <param name='animate_transition' value='yes' />
               <param name='display_static_image' value='yes' />
               <param name='display_spinner' value='yes' />
@@ -828,17 +829,17 @@
             </object>
           </div>
           <script type='text/javascript'>
-            var divElement = document.getElementById('viz1775850213654');
+            var divElement = document.getElementById('viz1775877498061');
             var vizElement = divElement.getElementsByTagName('object')[0];
             if (divElement.offsetWidth > 800) {
-              vizElement.style.width='100%';
-              vizElement.style.height='650px';
+              vizElement.style.width = '1000px';
+              vizElement.style.height = '827px';
             } else if (divElement.offsetWidth > 500) {
-              vizElement.style.width='100%';
-              vizElement.style.height='650px';
+              vizElement.style.width = '1000px';
+              vizElement.style.height = '827px';
             } else {
-              vizElement.style.width='100%';
-              vizElement.style.height='850px';
+              vizElement.style.width = '100%';
+              vizElement.style.height = '850px';
             }
             var scriptElement = document.createElement('script');
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
@@ -904,16 +905,151 @@
       </div>
     </section>
 
+    <!-- 5-2: Teens Not in School or Working -->
+    <section class="story-step">
+      <div class="content reveal">
+        <div class="step-num">2</div>
+        <p class="step-question">Is youth disconnection linked to teen mental health?</p>
+        <h2>Teens Not in School or Working and Teen Mental Health by Race</h2>
+
+        <p class="step-body correlation-intro">
+          This dashboard explores how teen mental health relates to the share of youth who are
+          <strong>not in school and not working</strong>. This measure refers to <strong>youth ages 16 to 19</strong>
+          who are not enrolled in school (full-time or part-time) and not employed (full-time or part-time),
+          by race and ethnicity. This measure is sometimes referred to as <strong>“Idle Teens”</strong> or
+          <strong>“Disconnected Youth.”</strong>
+        </p>
+
+        <p class="step-body correlation-intro">
+          Unlike the adverse-experience analysis, the pattern here is not consistent across groups.
+          For <strong>Hispanic or Latino</strong> and <strong>Multiracial</strong> youth, the relationship is interestingly negative
+          and statistically significant, with p-values below 0.05. For <strong>White</strong> and <strong>Black</strong>
+          youth, the relationships are weak and not statistically significant. The <strong>Asian</strong> group still
+          has too little reliable data for meaningful correlation analysis, so it is excluded from the discussion below.
+        </p>
+
+        <div class="viz-card" style="overflow: visible;">
+          <div class='tableauPlaceholder' id='viz1775877561355' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='Teens Not in School or Working and Teen Mental Health by Race '
+                  src='https://public.tableau.com/static/images/Te/TeensNotinSchoolorWorkingandTeenMentalHealthbyRace/Dashboard1/1_rss.png'
+                  style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='TeensNotinSchoolorWorkingandTeenMentalHealthbyRace&#47;Dashboard1' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Te/TeensNotinSchoolorWorkingandTeenMentalHealthbyRace/Dashboard1/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+            var divElement2 = document.getElementById('viz1775877561355');
+            var vizElement2 = divElement2.getElementsByTagName('object')[0];
+            if (divElement2.offsetWidth > 800) {
+              vizElement2.style.width = '1000px';
+              vizElement2.style.height = '827px';
+            } else if (divElement2.offsetWidth > 500) {
+              vizElement2.style.width = '1000px';
+              vizElement2.style.height = '827px';
+            } else {
+              vizElement2.style.width = '100%';
+              vizElement2.style.height = '850px';
+            }
+            var scriptElement2 = document.createElement('script');
+            scriptElement2.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement2.parentNode.insertBefore(scriptElement2, vizElement2);
+          </script>
+        </div>
+
+        <div class="race-voices">
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/white_icon.png" alt="White child" />
+              <span class="race-voice-label">White</span>
+            </div>
+            <div class="race-voice-bubble">
+              "For White youth, the relationship is extremely weak and not statistically significant.
+              Disconnection does not appear to explain much of the variation in teen mental health here."
+            </div>
+          </div>
+
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/black_icon.png" alt="Black child" />
+              <span class="race-voice-label">Black</span>
+            </div>
+            <div class="race-voice-bubble">
+              "For Black youth, the relationship is slightly negative, but it is also weak and not statistically significant.
+              This suggests no clear correlation in the available data."
+            </div>
+          </div>
+
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/hispanic_icon.png" alt="Hispanic child" />
+              <span class="race-voice-label">Hispanic</span>
+            </div>
+            <div class="race-voice-bubble">
+              "For Hispanic or Latino youth, the relationship is clearly negative and statistically significant.
+              States with higher disconnection rates tend to report lower teen anxiety and depression."
+            </div>
+          </div>
+
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/asian_icon.png" alt="Asian child" />
+              <span class="race-voice-label">Asian</span>
+            </div>
+            <div class="race-voice-bubble">
+              "My group still does not have enough reliable data for a trustworthy correlation analysis here."
+            </div>
+          </div>
+
+          <div class="race-voice">
+            <div class="race-voice-top">
+              <img src="images/twoRaces_icon.png" alt="Multiracial child" />
+              <span class="race-voice-label">Multiracial</span>
+            </div>
+            <div class="race-voice-bubble">
+              "For Multiracial youth, the relationship is moderately negative and statistically significant.
+              Higher disconnection is associated with lower reported teen anxiety and depression."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="story-step section-finale">
       <div class="content reveal">
         <div class="final-takeaway">
           <div class="final-takeaway-label">Section Takeaway</div>
           <p>
-            Across the racial groups with sufficient data, <strong>higher exposure to adverse experiences is consistently
-            associated with worse teen mental health</strong>. The relationship is strongest for <strong>Black</strong> and
-            <strong>Hispanic or Latino</strong> children, moderate for <strong>Multiracial</strong> children, and weaker for
-            <strong>White</strong> children. This suggests that adverse experiences are an important part of the story behind
-            mental health disparities, but their impact is not equally visible across all groups.
+            The two dashboards point to very different patterns. <strong>Adverse experiences show a consistently positive and
+            statistically significant relationship with teen mental health across all racial groups with usable data</strong>,
+            suggesting that greater exposure to hardship is closely associated with higher levels of anxiety and depression.
+            This relationship is especially strong for <strong>Black</strong> and <strong>Hispanic or Latino</strong> children,
+            and remains visible, though weaker, for <strong>White</strong> and <strong>Multiracial</strong> children.
+          </p>
+          <br />
+          <p>
+            By contrast, <strong>teens not in school or working does not show a single shared pattern across groups</strong>.
+            Significant negative relationships appear for <strong>Hispanic or Latino</strong> and <strong>Multiracial</strong>
+            youth, while the relationships for <strong>White</strong> and <strong>Black</strong> youth are weak and not
+            statistically significant. Together, these findings suggest that some social indicators, like adverse experiences,
+            track teen mental health disparities much more consistently than others. The <strong>Asian</strong> group remains
+            excluded from both analyses because the available data is too limited for reliable interpretation.
           </p>
         </div>
       </div>
