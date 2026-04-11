@@ -177,7 +177,7 @@ body::after {
 .story-step:nth-child(odd) { background: var(--warm-white); }
 .story-step:nth-child(even) { background: var(--cream); }
 
-.content { max-width: 920px; margin: 0 auto; position: relative; z-index: 2; }
+.content { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
 
 /* Decorative blobs */
 .story-step::before {
