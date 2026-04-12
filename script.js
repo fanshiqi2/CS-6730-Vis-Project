@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
       n.classList.toggle('active', n.dataset.goto === id);
     });
 
-    // Scroll to top of page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll to top of new tab content, offset by the sticky tab bar height
+    const tabBar = document.getElementById('tabBar');
+    const activePanel = document.querySelector('.tab-content.active');
+    activePanel.style.scrollMarginTop = tabBar.offsetHeight + 'px';
+    activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     // Trigger reveal animations in the newly-visible panel
     setTimeout(observeReveals, 100);
