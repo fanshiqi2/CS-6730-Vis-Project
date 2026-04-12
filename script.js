@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       n.classList.toggle('active', n.dataset.goto === id);
     });
 
-    // Scroll to tab bar
-    window.scrollTo({ top: document.getElementById('tabBar').offsetTop, behavior: 'smooth' });
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Trigger reveal animations in the newly-visible panel
     setTimeout(observeReveals, 100);
